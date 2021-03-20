@@ -1,10 +1,11 @@
-$primary: #8a4d76;
-$link: #fa7c91;
+$primary: #0528f2;
+$link: #4cb1f7;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
+$warning: #ffc700;
 
 // Update some of Bulma's component variables
-$body-background-color: #eff0eb;
+$body-background-color: #4cb1f7;
 
 @import "../../node_modules/bulma/bulma.sass";
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
