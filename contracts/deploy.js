@@ -8,7 +8,6 @@ var abi = JSON.parse(fs.readFileSync('/Users/mikeseiler/dev/tokenhost/tokenhost-
 
 async function main(){
   const ganacheAccounts = await web3.eth.getAccounts();
-console.log(ganacheAccounts);
   const helloWorld = new web3.eth.Contract(abi);
 
   helloWorld.deploy({

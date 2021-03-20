@@ -31,7 +31,6 @@ export default class PublicMessages extends React.Component {
         fromBlock: 'latest',
       },
       async function (err, data) {
-        console.log('event', data)
         await that.fetch()
       },
     )
@@ -60,7 +59,6 @@ export default class PublicMessages extends React.Component {
       var message = await contractws.methods.get_Tweets_N(index).call()
 
       const keys = ['text', 'timestamp', 'sender'] // need automagic version of this
-      console.log('hi', keys, message)
       message = zip(keys, message)
       message['index'] = index
 

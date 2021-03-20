@@ -10,11 +10,9 @@ export var w3ws = new Web3('wss://chain.token.ax:443')
 const contract_address = '0x797Bc882F768f575896B0700E6D3Ae1562aeB066'
 
 import abi from '../contracts/App_sol_App.json'
-console.log('abi', abi)
 
 function setupAccounts() {
   fetchUserItems('keys').then((key) => {
-    console.log(key)
     const ethPrivKey = key[0]['key']
 
     var me = w3ws.eth.accounts.privateKeyToAccount(ethPrivKey)
@@ -34,7 +32,6 @@ function setupAccounts() {
 
     w3.eth.accounts.wallet.add(account)
     w3.eth.defaultAccount = account.address
-    console.log("ADDR",account.address)
     contract.options.from = account.address
 
 

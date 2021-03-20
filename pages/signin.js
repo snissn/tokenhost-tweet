@@ -64,7 +64,6 @@ export default class signin extends Component {
     localStorage.setItem('USER', authUser.uid)
 
     // check if user exists in users collection
-    console.log('try thing ', authUser)
     fetchDocumentFromCollectionByFieldName({
       collectionName: 'users',
       fieldName: 'uid',
