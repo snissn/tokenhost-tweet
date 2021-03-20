@@ -43,8 +43,6 @@ contract App {
         return Tweets_list_length;
     }
 
-    //event NewJobs(address creater); //todo loop and fill out fields
-
     function get_Tweets_N(uint256 index)
         returns (
             string,
@@ -53,6 +51,25 @@ contract App {
         )
     {
         return Tweets(Tweets_list[index]).getall();
+    }
+
+    function get_last_Tweets_N(uint256 count, uint256 offset)
+        returns (
+            string[],
+            uint256[],
+            address[]
+        )
+    {
+        string[] memory text = new string[](count);
+        uint256[] memory timestamp = new uint256[](count);
+        address[] memory sender = new address[](count);
+        for (uint256 i = offset; i < count; i++) {
+            Tweets myTweets = Tweets(Tweets_list[i + offset]);
+            text[i + offset] = myTweets.get_text();
+            timestamp[i + offset] = myTweets.get_timestamp();
+            sender[i + offset] = myTweets.get_sender();
+        }
+        return (text, timestamp, sender);
     }
 
     struct UserInfo {

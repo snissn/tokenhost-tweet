@@ -50,21 +50,21 @@ export default class PublicMessages extends React.Component {
     var messages_count = await contractws.methods
       .get_Tweets_list_length()
       .call()
-    var messages = []
-    for (
-      var index = messages_count - 1;
-      index >= Math.max(0, messages_count - 10);
-      index--
-    ) {
-      var message = await contractws.methods.get_Tweets_N(index).call()
-
-      const keys = ['text', 'timestamp', 'sender'] // need automagic version of this
-      message = zip(keys, message)
-      message['index'] = index
-
-      messages.push(message)
-    }
-    return messages
+      if(messages_count == 0 ){
+        return []
+      }
+      const COUNT = 20
+      const count = Math.min(COUNT, messages_count);
+      const offset = Math.max(0,messages_count - count)
+      let ret = []
+   
+      var messages = await contractws.methods.get_last_Tweets_N(count,offset).call()
+      for(var i = messages[0].length-1; i>-1 ; i--){
+        var msg = {"text":messages[0][i], timestamp:messages[1][i],sender:messages[2][i]}
+        ret.push(msg)
+      }
+     
+    return ret
   }
 
   render() {
