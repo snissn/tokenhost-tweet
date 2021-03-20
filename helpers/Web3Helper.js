@@ -21,7 +21,6 @@ function setupAccounts() {
 
     const address = me.address
 
-    localStorage.setItem('ADDRESS', address) // hack here
 
     const privateKey = me.privateKey
 

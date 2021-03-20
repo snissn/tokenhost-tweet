@@ -62,6 +62,7 @@ export default class PublicMessages extends React.Component {
       const keys = ['text', 'timestamp', 'sender'] // need automagic version of this
       console.log('hi', keys, message)
       message = zip(keys, message)
+      message['index'] = index
 
       messages.push(message)
     }
@@ -80,7 +81,7 @@ export default class PublicMessages extends React.Component {
     return (
       <div>
         {this.state.publicMessages.data.map((tweet, index) => (
-          <Tweet key={index} tweet={tweet} />
+          <Tweet key={tweet.index} tweet={tweet} />
         ))}
       </div>
     )
