@@ -1,19 +1,18 @@
 import React, { Component, useEffect, useState } from 'react'
-import { fetchUserItems } from '../lib/utility'
-import KeyList from '../components/KeyList'
+import Send from '../components/Send'
+import Tweets from '../components/Tweets'
+
+import { setupAccounts } from '../helpers/Web3Helper'
 
 export default (props) => {
-  const [keys, setKeys] = useState([])
-
   useEffect(() => {
-    const x = fetchUserItems('keys')
-      .then((keys) => {
-        setKeys(keys)
-      })
-      .catch((error) => {
-        console.log(`There was an error on fetching keys ${error}`)
-      })
+    setupAccounts()
   }, [])
 
-  return <KeyList keys={keys} />
+  return (
+    <div className="container">
+      <Send />
+      <Tweets />
+    </div>
+  )
 }

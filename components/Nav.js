@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import Link  from "next/link";
+import Link from 'next/link'
 import Router from 'next/router'
 import getConfig from 'next/config'
 import { auth } from '../lib/db'
@@ -49,34 +49,29 @@ export default class TheNav extends Component {
   render() {
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div className="navbar-item is-pulled-left">
-          <Link href="/">
-            <a className="">
-              <img src="/TokenHost.png" />
-            </a>
-          </Link>
-          </div>
-          
-        <div className="navbar-item is-pulled-left">
-
-          {this.state.signedIn ? (
-            <Link href="/create">
-              <a className=" button is-warning">Add Key</a>
+        <div className="container">
+          <div className="navbar-item is-pulled-left">
+            <Link href="/">
+              <a className="">
+                <img src="/TokenHost.png" />
+              </a>
             </Link>
-          ) : null}
           </div>
-            <div className="navbar-item is-pulled-left">
-                {this.state.signedIn ? (
-                  <a className="button is-danger" onClick={this.signOut}>
-                    <strong>Sign out</strong>
-                  </a>
-                ) : (
-                  <Link href="/signin">
-                    <a className="button is-primary">
-                      <strong>Sign in</strong>
-                    </a>
-                  </Link>
-                )}
+
+
+          <div className="navbar-item navbar-end">
+            {this.state.signedIn ? (
+              <a className="button is-danger" onClick={this.signOut}>
+                <strong>Sign out</strong>
+              </a>
+            ) : (
+              <Link href="/signin">
+                <a className="button is-primary">
+                  <strong>Sign in</strong>
+                </a>
+              </Link>
+            )}
+          </div>
         </div>
       </nav>
     )
