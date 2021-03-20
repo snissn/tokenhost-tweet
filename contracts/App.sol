@@ -7,7 +7,7 @@ contract Tweets {
     address sender;
 
     function Tweets(string _text) {
-        sender = msg.sender;
+        sender = tx.origin;
         timestamp = block.timestamp;
         text = _text;
     }
@@ -69,15 +69,15 @@ contract App {
 
     function new_Tweets(string text) returns (address) {
         address mynew = address(new Tweets({_text: text}));
-        if (!user_map[msg.sender].exists) {
-            user_map[msg.sender] = create_user_on_new_Tweets(mynew);
+        if (!user_map[tx.origin].exists) {
+            user_map[tx.origin] = create_user_on_new_Tweets(mynew);
         }
-        user_map[msg.sender].Tweets_list.push(mynew);
+        user_map[tx.origin].Tweets_list.push(mynew);
 
         Tweets_list.push(mynew);
         Tweets_list_length += 1;
 
-        emit NewTweets(msg.sender);
+        emit NewTweets(tx.origin);
 
         return mynew;
     }

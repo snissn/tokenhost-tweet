@@ -7,7 +7,7 @@ const ec = new EC('secp256k1')
 
 export var w3 = new Web3()
 export var w3ws = new Web3('wss://chain.token.ax:443')
-const contract_address = '0x016f82569Da069A8a773ccc43a8d69fc093cB457'
+const contract_address = '0x797Bc882F768f575896B0700E6D3Ae1562aeB066'
 
 import abi from '../contracts/App_sol_App.json'
 console.log('abi', abi)
@@ -20,6 +20,9 @@ function setupAccounts() {
     var me = w3ws.eth.accounts.privateKeyToAccount(ethPrivKey)
 
     const address = me.address
+
+    localStorage.setItem('ADDRESS', address) // hack here
+
     const privateKey = me.privateKey
 
     const account = w3.eth.accounts.privateKeyToAccount(privateKey)
@@ -32,11 +35,10 @@ function setupAccounts() {
 
     w3.eth.accounts.wallet.add(account)
     w3.eth.defaultAccount = account.address
+    console.log("ADDR",account.address)
+    contract.options.from = account.address
 
-    w3.eth.getAccounts().then((account) => { 
-      // prime the contract so we don't need to specify the from address each time
-      contract.options.from = account[0]
-    })
+
 
   })
 }
