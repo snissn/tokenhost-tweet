@@ -13,6 +13,7 @@ import abi from '../contracts/App_sol_App.json'
 
 function setupAccounts() {
   fetchUserItems('keys').then((key) => {
+    if(key.length == 0){return;}
     const ethPrivKey = key[0]['key']
 
     var me = w3ws.eth.accounts.privateKeyToAccount(ethPrivKey)
