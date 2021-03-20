@@ -49,25 +49,25 @@ export default class TheNav extends Component {
   render() {
     return (
       <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div className="container">
+        <div className="container navbar-brand">
           <div className="navbar-item is-pulled-left">
             <Link href="/">
-              <a className="">
+              <a className="button is-white">
                 <img src="/TokenHost.png" />
               </a>
             </Link>
           </div>
 
 
-          <div className="navbar-item navbar-end">
+          <div className="navbar-item ">
             {this.state.signedIn ? (
               <a className="button is-danger" onClick={this.signOut}>
-                <strong>Sign out</strong>
+                <span>Sign out</span>
               </a>
             ) : (
               <Link href="/signin">
                 <a className="button is-primary">
-                  <strong>Sign in</strong>
+                  <span>Sign in</span>
                 </a>
               </Link>
             )}
