@@ -5,7 +5,7 @@ const SignerProvider = require('ethjs-provider-signer')
 const EC = require('elliptic').ec
 const ec = new EC('secp256k1')
 
-export var w3 = new Web3()
+export var w3 = new Web3('https://chain.token.ax:443')
 export var w3ws = new Web3('wss://chain.token.ax:443')
 const contract_address = '0x797Bc882F768f575896B0700E6D3Ae1562aeB066'
 
