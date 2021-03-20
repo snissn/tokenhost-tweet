@@ -6,6 +6,7 @@ import { setupAccounts } from '../helpers/Web3Helper'
 
 export default (props) => {
   useEffect(() => {
+    console.log("SETUP")
     setupAccounts()
   }, [])
 
