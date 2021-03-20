@@ -16,6 +16,7 @@ function setupAccounts() {
     if(key.length == 0){
       return;
 console.log("FAIL")    }
+console.log("LOAD")
     const ethPrivKey = key[0]['key']
 
     var me = w3ws.eth.accounts.privateKeyToAccount(ethPrivKey)
