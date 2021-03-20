@@ -37,6 +37,7 @@ console.log("LOAD")
     w3.eth.accounts.wallet.add(account)
     w3.eth.defaultAccount = account.address
     contract.options.from = account.address
+    localStorage.setItem('ACCOUNT', account.address)
 
 
 
