@@ -13,12 +13,12 @@ export default (props) => {
 
   if(!user){
   return (
-    <section className="hero is-primary is-bold  mb-6">
+    <section className="hero is-primary mb-6">
  
     </section>
   )
   }else{return (
-    <section className="hero is-primary is-bold  mb-6">
+    <section className="hero is-primary mb-6">
  <img width={30} src={user.photo} />
  <p>{user.name}</p>
 

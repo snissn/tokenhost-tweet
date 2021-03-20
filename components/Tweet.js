@@ -4,7 +4,7 @@ import User from './User.js'
 export default (props) => {
   const tweet = props.tweet;
   return (
-    <section className="hero is-primary is-bold  mb-6">
+    <section className="hero is-primary mb-6">
       <div className="hero-body">
         <div className="container">
           <h1 className="title">
