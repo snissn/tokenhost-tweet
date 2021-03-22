@@ -27,7 +27,7 @@ export default function Send() {
         .then((gasEstimate) => {
           contract.methods
             .new_Tweets(message)
-            .send({ gas: gasEstimate, from: localStorage.getItem('ACCOUNT') })
+            .send({ gas: gasEstimate  })
             .then(() => {
               setSendStatus('')
               setMessage('')

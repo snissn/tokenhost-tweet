@@ -60,7 +60,7 @@ export default class PublicMessages extends React.Component {
    
       var messages = await contractws.methods.get_last_Tweets_N(count,offset).call()
       for(var i = messages[0].length-1; i>-1 ; i--){
-        var msg = {"text":messages[0][i], timestamp:messages[1][i],sender:messages[2][i]}
+        var msg = {"text":messages[0][i], timestamp:messages[1][i],sender:messages[2][i], id:i}
         ret.push(msg)
       }
      
@@ -79,7 +79,7 @@ export default class PublicMessages extends React.Component {
     return (
       <div>
         {this.state.publicMessages.data.map((tweet, index) => (
-          <Tweet key={tweet.index} tweet={tweet} />
+          <Tweet key={tweet.i} tweet={tweet} />
         ))}
       </div>
     )

@@ -10,7 +10,6 @@ export default (props) => {
           <h1 className="title">
             {tweet.text}
           </h1>
-
           <h2 className="subtitle">
             <TimeAgo date={tweet.timestamp*1000} />
           </h2>
