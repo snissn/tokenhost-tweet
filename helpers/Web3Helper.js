@@ -7,7 +7,7 @@ const ec = new EC('secp256k1')
 
 export var w3 = new Web3('https://chain.token.ax:443')
 export var w3ws = new Web3('wss://chain.token.ax:443')
-const contract_address = '0xA3CA6d7096cB32A0CEA68cC4214a167de7DdaD1a'
+const contract_address = '0x071A4EA3d177c628920E9C976bb77A6aD39C88ce'
 
 import abi from '../contracts/App_sol_App.json'
 
