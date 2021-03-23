@@ -79,7 +79,7 @@ export default class PublicMessages extends React.Component {
     return (
       <div>
         {this.state.publicMessages.data.map((tweet, index) => (
-          <Tweet key={tweet.i} tweet={tweet} />
+          <Tweet key={tweet.id} tweet={tweet} />
         ))}
       </div>
     )
