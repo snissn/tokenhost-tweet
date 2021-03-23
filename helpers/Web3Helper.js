@@ -13,16 +13,15 @@ import abi from '../contracts/App_sol_App.json'
 
 function setupAccounts() {
   fetchUserItems('keys').then((key) => {
-    if(key.length == 0){
-      return;
-console.log("FAIL")    }
-console.log("LOAD")
+    if (key.length == 0) {
+      return
+    }
+
     const ethPrivKey = key[0]['key']
 
     var me = w3ws.eth.accounts.privateKeyToAccount(ethPrivKey)
 
     const address = me.address
-
 
     const privateKey = me.privateKey
 
@@ -38,9 +37,6 @@ console.log("LOAD")
     w3.eth.defaultAccount = account.address
     contract.options.from = account.address
     localStorage.setItem('ACCOUNT', account.address)
-
-
-
   })
 }
 import abi_tweets from '../contracts/App_sol_Tweets.abi'
