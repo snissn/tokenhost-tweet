@@ -14,7 +14,7 @@ export default (props) => {
             <TimeAgo date={tweet.timestamp*1000} />
           </h2>
           <p>
-            <User sender={tweet.sender} />
+            <User sender={tweet.sender} key={props.key} />
           </p>
         </div>
       </div>

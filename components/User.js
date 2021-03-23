@@ -3,6 +3,7 @@ import React, { Component, useEffect, useState } from 'react'
 
 export default (props) => {
   const address = props.sender
+  const key = props.key
   const [user, setUser] = useState({})
   useEffect(function () {
     fetchDocumentFromCollectionByFieldName({
@@ -12,7 +13,7 @@ export default (props) => {
     }).then((result) => {
       setUser(result)
     })
-  }, [user])
+  }, [props.key])
 
   if (!user) {
     return <section className="hero is-primary mb-6"></section>
