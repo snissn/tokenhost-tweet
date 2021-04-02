@@ -115,6 +115,15 @@ export default class signin extends Component {
               </span>
               <span>Login with Google</span>
             </button>
+            <button
+              className="button google is-fullwidth is-rounded p-5 is-inverted"
+              onClick={() => this.authenticate('Twitter')}
+            >
+              <span className="icon">
+                <i className="fab fa-twitter" />
+              </span>
+              <span>Login with Twitter</span>
+            </button>
           </div>
         </div>
         <style jsx>{`
