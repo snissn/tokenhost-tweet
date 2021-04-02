@@ -57,7 +57,7 @@ export default function Send() {
               className={
                 sendStatus === 'Sending'
                   ? 'button is-info is-bold'
-                  : 'button is-warning has-text-white is-bold'
+                  : 'button is-primary has-text-white is-bold'
               }
               type="submit"
               value={sendStatus === 'Sending' ? 'Sharing...' : 'Share'}
