@@ -9,7 +9,14 @@ $danger: #f40026;
 $body-background-color: #4cb1f7;
 
 @import "../../node_modules/bulma/bulma.sass";
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 * {
-  font-family: "Noto Sans JP";
+  font-family: "Montserrat";
+}
+
+.button { border-radius: 0; font-weight:bold;}
+.input { border-radius: 0;}
+
+.input {
+  border: 3px solid #0528F2  !important;
 }

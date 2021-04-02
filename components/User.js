@@ -20,7 +20,7 @@ export default (props) => {
   } else {
     return (
       <section className="hero is-primary mb-6">
-        <img width={30} src={user.photo} />
+        <img width={50} src={user.photo} />
         <p>{user.name}</p>
       </section>
     )

@@ -56,8 +56,8 @@ export default function Send() {
             <input
               className={
                 sendStatus === 'Sending'
-                  ? 'button is-info '
-                  : 'button is-warning'
+                  ? 'button is-info is-bold'
+                  : 'button is-warning has-text-white is-bold'
               }
               type="submit"
               value={sendStatus === 'Sending' ? 'Sharing...' : 'Share'}
