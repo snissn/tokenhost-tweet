@@ -57,7 +57,7 @@ export default function Send() {
               className={
                 sendStatus === 'Sending'
                   ? 'button is-info is-bold'
-                  : 'button is-primary has-text-white is-bold'
+                  : 'button is-warning has-text-white is-bold'
               }
               type="submit"
               value={sendStatus === 'Sending' ? 'Sharing...' : 'Share'}
@@ -72,7 +72,7 @@ export default function Send() {
       <section className="hero is-warning mb-6">
         <div className="hero-body">
           <div className="container">
-            <h3 className="title is-5">Please sign in to leave a message</h3>
+            <h3 className="title has-text-centered is-5">Please sign in to leave a message</h3>
           </div>
         </div>
       </section>
