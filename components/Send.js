@@ -37,7 +37,14 @@ export default function Send() {
   }
   if (user) {
     return (
-      <form className="p-6" onSubmit={mySubmitHandler}>
+      /* Sorry about how ugly this is, using inline styles doesn't work for whatever reason */
+      <form ref={(node) => {
+        if (node) {
+          node.style.setProperty("padding-left", "0rem", "important");
+          node.style.setProperty("padding-right", "0rem", "important");
+        }
+      }}
+      className="p-6" onSubmit={mySubmitHandler}>
         <div className="field is-grouped">
           <p className="control is-expanded">
             <input
@@ -52,7 +59,7 @@ export default function Send() {
             />
           </p>
 
-          <p className="control">
+          <p className="control" style = {{margin:0}}>
             <input
               className={
                 sendStatus === 'Sending'
