@@ -22,7 +22,7 @@ export default (props) => {
     return <section className="hero is-primary mb-6"></section>
   } else {
     return (
-      <section className="hero is-primary mb-6" backgroundColor={'red'}>
+      <section className="hero is-primary mb-6">
         <img width={50} height={50} src={user.photo} />
         <h6 className=" p-2 title is-6">{user.name}</h6>
       </section>
